@@ -32,7 +32,7 @@ class Experimental : ConfigContainer() {
     class AppLockConfig: ConfigContainer(hasGlobalState = true) {
         val lockOnResume = boolean("lock_on_resume", defaultValue = true)
     }
-
+    
     val nativeHooks = container("native_hooks", NativeHooks()) { icon = "Memory"; requireRestart() }
     val sessionEvents = container("session_events", SessionEventsConfig()) { requireRestart(); nativeHooks() }
     val spoof = container("spoof", Spoof()) { icon = "Fingerprint" ; addNotices(FeatureNotice.BAN_RISK); requireRestart() }
@@ -45,6 +45,7 @@ class Experimental : ConfigContainer() {
     val editMessage = boolean("edit_message") { requireRestart(); addNotices(FeatureNotice.BAN_RISK) }
     val appLock = container("app_lock", AppLockConfig()) { requireRestart(); addNotices(FeatureNotice.UNSTABLE) }
     val infiniteStoryBoost = boolean("infinite_story_boost")
+    val unlimitedMultiSnap = boolean("unlimited_multi_snap") { addNotices(FeatureNotice.BAN_RISK)}
     val meoPasscodeBypass = boolean("meo_passcode_bypass")
     val noFriendScoreDelay = boolean("no_friend_score_delay") { requireRestart()}
     val e2eEncryption = container("e2ee", E2EEConfig()) { requireRestart(); nativeHooks() }
