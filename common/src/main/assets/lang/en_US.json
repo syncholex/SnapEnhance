@@ -664,6 +664,10 @@
                         "name": "Bypass Video Length Restrictions",
                         "description": "Single: sends a single video\nSplit: split videos after editing"
                     },
+                    "unlimited_multi_snap": {
+                        "name": "Unlimited Multi Snap",
+                        "description": "Allows you to take an Unlimited Amount of Multi Snaps"
+                    },
                     "default_video_playback_rate": {
                         "name": "Default Video Playback Rate",
                         "description": "Sets the default speed for the playback of videos\nValue must be between 0.1 and 4.0"
