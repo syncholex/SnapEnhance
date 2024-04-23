@@ -100,6 +100,7 @@ class FeatureManager(
             HideQuickAddFriendFeed(),
             CallStartConfirmation(),
             SnapPreview(),
+            UnlimitedMultiSnap(),
             BypassScreenshotDetection(),
             HalfSwipeNotifier(),
             DisableConfirmationDialogs(),
