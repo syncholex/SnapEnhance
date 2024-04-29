@@ -46,8 +46,8 @@ class Experimental : ConfigContainer() {
     val editMessage = boolean("edit_message") { requireRestart(); addNotices(FeatureNotice.BAN_RISK) }
     val appLock = container("app_lock", AppLockConfig()) { requireRestart(); addNotices(FeatureNotice.UNSTABLE) }
     val infiniteStoryBoost = boolean("infinite_story_boost")
-    //val unlimitedMultiSnap = boolean("unlimited_multi_snap") { addNotices(FeatureNotice.BAN_RISK)}
     val meoPasscodeBypass = boolean("meo_passcode_bypass")
+    val unlimitedMultiSnap = boolean("unlimited_multi_snap") { addNotices(FeatureNotice.BAN_RISK)}
     val noFriendScoreDelay = boolean("no_friend_score_delay") { requireRestart()}
     val bestFriendPinning = boolean("best_friend_pinning") { requireRestart(); addNotices(FeatureNotice.UNSTABLE) }
     val e2eEncryption = container("e2ee", E2EEConfig()) { requireRestart(); nativeHooks() }
