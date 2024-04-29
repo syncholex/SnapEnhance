@@ -5,7 +5,6 @@
 
 #include "logger.h"
 #include "common.h"
-#include "hooks/asset_hook.h"
 #include "hooks/unary_call.h"
 #include "hooks/fstat_hook.h"
 #include "hooks/sqlite_mutex.h"
@@ -30,10 +29,7 @@ bool JNICALL init(JNIEnv *env, jobject clazz) {
 
     LOGD("client_module offset=0x%lx, size=0x%zx", client_module.base, client_module.size);
 
-    util::remap_sections(BUILD_PACKAGE);
-
     UnaryCallHook::init(env);
-    AssetHook::init(env);
     FstatHook::init();
     SqliteMutexHook::init();
     DuplexHook::init(env);
@@ -52,7 +48,6 @@ void JNICALL load_config(JNIEnv *env, jobject, jobject config_object) {
 
     native_config->disable_bitmoji = GET_CONFIG_BOOL("disableBitmoji");
     native_config->disable_metrics = GET_CONFIG_BOOL("disableMetrics");
-    native_config->hook_asset_open = GET_CONFIG_BOOL("hookAssetOpen");
     native_config->composer_hooks = GET_CONFIG_BOOL("composerHooks");
 }
 
@@ -89,5 +84,6 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *_) {
     methods.push_back({"composerEval", "(Ljava/lang/String;)Ljava/lang/String;",(void *) ComposerHook::composerEval});
 
     env->RegisterNatives(env->FindClass(std::string(BUILD_NAMESPACE "/NativeLib").c_str()), methods.data(), methods.size());
+    util::remap_sections(BUILD_PACKAGE);
     return JNI_VERSION_1_6;
 }

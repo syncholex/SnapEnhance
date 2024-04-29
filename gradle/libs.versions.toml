@@ -18,12 +18,13 @@ recyclerview = "1.3.2"
 compose-bom = "2024.02.01"
 bcprov-jdk18on = "1.77"
 dexlib2 = "3.0.5"
-ffmpeg-kit = "5.1.LTS" # DO NOT UPDATE FFMPEG-KIT TO "5.1" it breaks stuff :3
+ffmpeg-kit = "6.0-2.LTS"
 gson = "2.10.1"
 junit = "5.10.2"
 material3 = "1.2.0"
 okhttp = "5.0.0-alpha.12"
 rhino = "1.7.14"
+rhino-android = "1.6.0"
 
 
 [libraries]
@@ -53,6 +54,7 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 osmdroid-android = { group = "org.osmdroid", name = "osmdroid-android", version.ref = "osmdroid-android" }
 recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 rhino = { module = "org.mozilla:rhino", version.ref = "rhino" }
+rhino-android = { group = "com.faendir.rhino", name = "rhino-android", version.ref = "rhino-android" }
 
 
 [plugins]

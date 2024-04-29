@@ -1,5 +1,6 @@
 package me.rhunk.snapenhance.common.config.impl
 
+import android.graphics.Color
 import me.rhunk.snapenhance.common.config.ConfigContainer
 import me.rhunk.snapenhance.common.config.FeatureNotice
 import me.rhunk.snapenhance.common.data.MessagingRuleType
@@ -18,12 +19,25 @@ class UserInterfaceTweaks : ConfigContainer() {
         val amount = integer("amount", defaultValue = 1)
     }
 
+    inner class CustomizeUIConfig : ConfigContainer(hasGlobalState = true) {
+        private val checkInputColor = { value: String ->
+            value.isEmpty() || runCatching { Color.parseColor(value) }.isSuccess
+        }
+        val textColor = string("text_color") { inputCheck = checkInputColor }
+        val sendAndReceivedTextColor = string("send_and_received_text_color") { inputCheck = checkInputColor }
+        val backgroundColor = string("background_color") { inputCheck = checkInputColor }
+        val backgroundColorSurface = string("background_color_surface") { inputCheck = checkInputColor }
+        val actionMenuBackgroundColor = string("action_menu_background_color") { inputCheck = checkInputColor }
+        val actionMenuRoundBackgroundColor = string("action_menu_round_background_color") { inputCheck = checkInputColor }    
+    }
+
     val friendFeedMenuButtons = multiple(
         "friend_feed_menu_buttons","conversation_info", "mark_snaps_as_seen", "mark_stories_as_seen_locally", *MessagingRuleType.entries.filter { it.showInFriendMenu }.map { it.key }.toTypedArray()
     ).apply {
         set(mutableListOf("conversation_info", MessagingRuleType.STEALTH.key))
     }
-    val amoledDarkMode = boolean("amoled_dark_mode") { addNotices(FeatureNotice.UNSTABLE); requireRestart() }
+    val amoledDarkMode = boolean("amoled_dark_mode") { requireRestart() }
+    val customizeUi = container("customize_ui", CustomizeUIConfig()) { addNotices(FeatureNotice.UNSTABLE); requireRestart() }
     val friendFeedMessagePreview = container("friend_feed_message_preview", FriendFeedMessagePreview()) { requireRestart() }
     val snapPreview = boolean("snap_preview") { addNotices(FeatureNotice.UNSTABLE); requireRestart() }
     val bootstrapOverride = container("bootstrap_override", BootstrapOverride()) { requireRestart() }

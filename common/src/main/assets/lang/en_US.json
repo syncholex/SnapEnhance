@@ -362,6 +362,36 @@
                         "name": "AMOLED Dark Mode",
                         "description": "Enables AMOLED dark mode\nMake sure Snapchats Dark mode is enabled"
                     },
+                    "customize_ui": {
+                        "name": "Colors",
+                        "description": "Customize Snapchats Colors",
+                        "properties": {
+                            "text_color": {
+                                "name": "Text Color",
+                                "description": "Changes Snapchats text color\nInput hex color code"
+                            },
+                            "send_and_received_text_color": {
+                                "name": "Sent & Received Text Color",
+                                "description": "Changes Snapchats Sent and Received text color on the friend feed\nInput a hex color code"
+                            },
+                            "background_color": {
+                                "name": "Background Color",
+                                "description": "Changes Snapchats background color\nInput a hex color code"
+                            },
+                            "background_color_surface": {
+                                "name": "Background Surface Color",
+                                "description": "Changes Snapchats background surface color\nInput a hex color code"
+                            },
+                            "action_menu_background_color": {
+                                "name": "Action Menu Background Color",
+                                "description": "Changes Snapchats chat action menu background color\nInput a hex color code"
+                            },
+                            "action_menu_round_background_color": {
+                                "name": "Action Menu Round Background Color",
+                                "description": "Changes Snapchats chat action menu round background color\nInput a hex color code"
+                            }
+                        }
+                    },
                     "friend_feed_message_preview": {
                         "name": "Friend Feed Message Preview",
                         "description": "Shows a preview of the last messages in the Friend Feed",
@@ -606,6 +636,10 @@
                                 "name": "Coordinates",
                                 "description": "Set the coordinates of the spoofed location"
                             },
+                            "walk_radius": {
+                                "name": "Walk Radius",
+                                "description": "Randomly walk around within this radius (ft)"
+                            },
                             "always_update_location": {
                                 "name": "Always Update Location",
                                 "description": "Force Snapchat to update location even if no GPS data is received"
@@ -647,6 +681,10 @@
                     "block_ads": {
                         "name": "Block Ads",
                         "description": "Prevents Advertisements from being displayed"
+                    },
+                    "disable_custom_tabs": {
+                        "name": "Disable Custom Tabs",
+                        "description": "Opens links in supported applications rather than in the Web Browser"
                     },
                     "disable_permission_requests": {
                         "name": "Disable Permission Requests",
@@ -778,6 +816,10 @@
                                 "name": "Composer Hooks",
                                 "description": "Injects code into the Composer cross-platform UI framework",
                                 "properties": {
+                                    "show_first_created_username": {
+                                        "name": "Show First Created Username",
+                                        "description": "Shows the first created username next to the current username in the profile page"
+                                    },
                                     "bypass_camera_roll_limit": {
                                         "name": "Bypass Camera Roll Limit",
                                         "description": "Increases the maximum amount of media you can send from the camera roll"
@@ -898,6 +940,10 @@
                         "name": "No Friend Score Delay",
                         "description": "Removes the delay when viewing a Friends Score"
                     },
+                    "best_friend_pinning": {
+                        "name": "Best Friend Pinning",
+                        "description": "Allows you to pin a friend as your number one best friend. Note: only you can see your pinned best friend"
+                    },
                     "e2ee": {
                         "name": "End-To-End Encryption",
                         "description": "Encrypts your messages with AES using a shared secret key\nMake sure to save your key somewhere safe!",
@@ -923,10 +969,6 @@
                     "custom_streaks_expiration_format": {
                         "name": "Custom Streaks Expiration Format",
                         "description": "Customizes the Streaks Expiration format\n\nAvailable variables:\n - %c: Streaks Count\n - %e: Hourglass Emoji\n - %d: Days\n - %h: Hours\n - %m: Minutes\n - %s: Seconds\n - %w: Remaining Time"
-                    },
-                    "disable_composer_modules": {
-                        "name": "Disable Composer Modules",
-                        "description": "Prevents selected composer modules from being loaded\nNames must be separated by a comma"
                     },
                     "prevent_forced_logout": {
                         "name": "Prevent Forced Logout",
@@ -1025,6 +1067,7 @@
                 "abandon_video": "Missed Video Call"
             },
             "gallery_media_send_override": {
+                "always_ask": "Always Ask",
                 "ORIGINAL": "Original",
                 "NOTE": "Audio Note",
                 "SNAP": "Snap",

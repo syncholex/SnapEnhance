@@ -10,6 +10,7 @@ class Experimental : ConfigContainer() {
     }
 
     class ComposerHooksConfig: ConfigContainer(hasGlobalState = true) {
+        val showFirstCreatedUsername = boolean("show_first_created_username")
         val bypassCameraRollLimit = boolean("bypass_camera_roll_limit")
         val composerConsole = boolean("composer_console")
         val composerLogs = boolean("composer_logs")
@@ -48,6 +49,7 @@ class Experimental : ConfigContainer() {
     val unlimitedMultiSnap = boolean("unlimited_multi_snap") { addNotices(FeatureNotice.BAN_RISK)}
     val meoPasscodeBypass = boolean("meo_passcode_bypass")
     val noFriendScoreDelay = boolean("no_friend_score_delay") { requireRestart()}
+    val bestFriendPinning = boolean("best_friend_pinning") { requireRestart(); addNotices(FeatureNotice.UNSTABLE) }
     val e2eEncryption = container("e2ee", E2EEConfig()) { requireRestart(); nativeHooks() }
     val hiddenSnapchatPlusFeatures = boolean("hidden_snapchat_plus_features") {
         addNotices(FeatureNotice.BAN_RISK, FeatureNotice.UNSTABLE)
@@ -61,6 +63,5 @@ class Experimental : ConfigContainer() {
         "added_by_qr_code",
         "added_by_community",
     ) { addNotices(FeatureNotice.BAN_RISK) }
-    val disableComposerModules = string("disable_composer_modules") { requireRestart(); nativeHooks() }
     val preventForcedLogout = boolean("prevent_forced_logout") { requireRestart(); addNotices(FeatureNotice.BAN_RISK, FeatureNotice.INTERNAL_BEHAVIOR); }
 }

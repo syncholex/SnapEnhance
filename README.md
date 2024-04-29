@@ -85,7 +85,7 @@ We no longer offer official `LSPatch` binaries for obvious reasons. However, you
   - `Call Start Confirmation`
   - `Auto Save Messages` 
   - `Prevent Message Sending`
-  - `Instant Delete`
+  - `Friend Mutation Notifier`
   - `Better Notifications` 
   - `Notifications Blacklist`
   - `Message Logger`
@@ -149,8 +149,8 @@ We no longer offer official `LSPatch` binaries for obvious reasons. However, you
   - `No Friend Score Delay`
   - `End-to-End Encryption`
   - `Enable Hidden Snapchat Plus Features`
+  - `Custom Streaks Expiration Format`
   - `Add Friend Source Spoof`
-  - `Disable Composer Modules`
   - `Prevent Forced Logout`
 </details>
 
@@ -235,6 +235,7 @@ We do not collect any user information. However, please be aware that third-part
   - [coil](https://github.com/coil-kt/coil)
   - [Dobby](https://github.com/jmpews/Dobby)
   - [rhino](https://github.com/mozilla/rhino)
+  - [rhino-android](https://github.com/F43nd1r/rhino-android)
   - [libsu](https://github.com/topjohnwu/libsu)
 </details>
 
@@ -249,6 +250,8 @@ Thanks to everyone involved including the [third-party libraries](https://github
 - [TheVisual](https://github.com/TheVisual)
 - [CanerKaraca23](https://github.com/CanerKaraca23)
 - [bocajthomas](https://github.com/bocajthomas)
+- [w451](https://github.com/w451)
+
 ## Donate
 - LTC: LbBnT9GxgnFhwy891EdDKqGmpn7XtduBdE
 - BCH: qpu57a05kqljjadvpgjc6t894apprvth9slvlj4vpj
