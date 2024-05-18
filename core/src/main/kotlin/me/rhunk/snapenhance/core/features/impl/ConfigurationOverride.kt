@@ -62,6 +62,8 @@ class ConfigurationOverride : Feature("Configuration Override", loadParams = Fea
                 { true })
             overrideProperty("MULTI_SNAP", { context.config.experimental.unlimitedMultiSnap.get() },
                 { true })
+            overrideProperty("ENABLE_MULTI_SNAP", { context.config.experimental.unlimitedMultiSnap.get() },
+                { true })
             overrideProperty("MULTI_SNAP_MIGRATION", { context.config.experimental.unlimitedMultiSnap.get() },
                 { true })
             overrideProperty("DF_VOPERA_FOR_STORIES", { context.config.userInterface.verticalStoryViewer.get() },
