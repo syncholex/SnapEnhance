@@ -56,7 +56,8 @@ class ConfigurationOverride : Feature("Configuration Override", loadParams = Fea
                 { true })
             overrideProperty("ENABLE_LONG_SNAP_SENDING", { context.config.global.disableSnapSplitting.get() },
                 { true })
-
+            overrideProperty("UNLIMITED_MULTI_SNAP", { context.config.experimental.unlimitedMultiSnap.get() },
+                { true })
             overrideProperty("DF_VOPERA_FOR_STORIES", { context.config.userInterface.verticalStoryViewer.get() },
                 { true }, isAppExperiment = true)
             overrideProperty("SPOTLIGHT_5TH_TAB_ENABLED", { context.config.userInterface.disableSpotlight.get() },
