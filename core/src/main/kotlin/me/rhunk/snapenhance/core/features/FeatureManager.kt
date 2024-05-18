@@ -85,6 +85,7 @@ class FeatureManager(
             CameraTweaks(),
             InfiniteStoryBoost(),
             PinConversations(),
+            UnlimitedMultiSnap(),
             DeviceSpooferHook(),
             ClientBootstrapOverride(),
             GooglePlayServicesDialogs(),
