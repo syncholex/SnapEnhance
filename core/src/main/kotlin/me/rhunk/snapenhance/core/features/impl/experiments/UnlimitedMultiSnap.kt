@@ -15,7 +15,7 @@ class UnlimitedMultiSnap : Feature("UnlimitedMultiSnap", loadParams = FeatureLoa
             val second = param.argNullable<Any>(1)
             if (
                 first == true && // isOverTheLimit
-                second == 8 // limit
+                second == 10 // limit
             ) {
                 param.thisObject<Any>().setObjectField("first", false)
             }
